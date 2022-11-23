@@ -34,6 +34,11 @@ class PostController extends Controller
         //
     }
 
+    public function getPosts () {
+        $post = Post::query()->get();
+
+        return response()->json(['successfully work' => true, 'posts' => new Post($post)]);
+    }
     /**
      * Store a newly created resource in storage.
      *
